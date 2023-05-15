@@ -1,0 +1,41 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: tomcat-app
+  labels:
+    app: tomcat-app
+  namespace: java-apps
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: tomcat-app
+  template:
+    metadata:
+      labels:
+        app: tomcat-app
+    spec:
+      containers:
+      - name: tomcat-app
+        image: docker.io/abhimanyubajaj98/java-tomcat-sample-app-buildx:latest
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8080
+        #env:
+        #- name: APPDYNAMICS_AGENT_UNIQUE_HOST_ID
+        #  value: $(cat /proc/self/cgroup | head -1 | awk -F '/' '{print $NF}' | cut -c 16-27)
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: tomcat-app-service
+  labels:
+    app: tomcat-app
+  namespace: java-apps
+spec:
+  ports:
+  - port: 8080
+    targetPort: 8080
+  selector:
+    app: tomcat-app
