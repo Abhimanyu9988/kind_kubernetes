@@ -20,9 +20,9 @@ To install the AppDynamics agent, follow the steps below:
    git clone https://github.com/Abhimanyu9988/kind_kubernetes.git
 Navigate to the repository directory.
 
-shell
-Copy code
-cd kind_kubernetes
+
+```shell cd kind_kubernetes ```
+
 Edit the values.yaml file to configure the agent settings. Set the following parameters in the controllerInfo section:
 
 url: The URL of your AppDynamics controller.
@@ -31,9 +31,7 @@ Save the changes to the values.yaml file.
 
 2. Run the install-kind.sh script.
 
-  ```shell
-  ./install-kind.sh 
-
+  ```shell  ./install-kind.sh  ```
 This script will download all the necessary files and install the AppDynamics agent using Kind.
 
 After the installation completes, you can verify the deployment by accessing the AppDynamics controller and checking for the registered Kubernetes application.
