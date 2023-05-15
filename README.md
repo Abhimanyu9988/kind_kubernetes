@@ -31,9 +31,9 @@ Save the changes to the values.yaml file.
 
 Run the install-kind.sh script.
 
-shell
-Copy code
-./install-kind.sh
+  ```shell
+  ./install-kind.sh
+
 This script will download all the necessary files and install the AppDynamics agent using Kind.
 
 After the installation completes, you can verify the deployment by accessing the AppDynamics controller and checking for the registered Kubernetes application.
