@@ -29,9 +29,18 @@ url: The URL of your AppDynamics controller.
 account: Your AppDynamics account name.
 Save the changes to the values.yaml file.
 
-Run the install-kind.sh script.
+2. Run the install-kind.sh script.
 
   ```shell
   ./install-kind.sh 
 
+This script will download all the necessary files and install the AppDynamics agent using Kind.
+
+After the installation completes, you can verify the deployment by accessing the AppDynamics controller and checking for the registered Kubernetes application.
+
+Configuration
+Additional configuration options and advanced settings can be found in the values.yaml file. Modify these settings according to your requirements.
+
+Contributing
+Contributions are welcome! If you find any issues or have suggestions for improvements, please open an issue or submit a pull request.
 
